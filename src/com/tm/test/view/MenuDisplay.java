@@ -1,9 +1,13 @@
+package com.tm.test.view;
+
+import com.tm.test.domain.enums.MenuOptionsEnum;
+
 import static java.text.MessageFormat.format;
 
 public class MenuDisplay {
-    String Text;
+    private final String Text;
 
-    MenuDisplay() {
+    public MenuDisplay() {
         StringBuilder sb = new StringBuilder();
 
         sb.append("-----------------\n");
@@ -19,5 +23,9 @@ public class MenuDisplay {
         }
 
         Text = sb.toString();
+    }
+
+    public String getText() {
+        return Text;
     }
 }

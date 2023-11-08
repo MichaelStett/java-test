@@ -1,13 +1,17 @@
+package com.tm.test.domain.enums;
+
 import org.javatuples.Pair;
 
 import java.util.stream.Stream;
 
 public enum MenuOptionsEnum {
     AddTask(1, "Add Task"),
-    ViewTask(2, "View Tasks"),
-    MarkAsCompleted(3,"Mark Task as Complete"),
-    RemoveCompleted(4, "Remove Completed Tasks"),
-    Exit(5, "Exit");
+    EditTask(2, "Edit Task"),
+    ViewTask(3, "View Tasks"),
+    MarkAsCompleted(4,"Mark Task as Complete"),
+    MarkAsInProgress(5,"Mark Task as InProgress"),
+    RemoveCompleted(6, "Remove Completed Tasks"),
+    Exit(7, "Exit");
 
     final Integer number;
     final String description;
@@ -17,11 +21,11 @@ public enum MenuOptionsEnum {
         this.description = description;
     }
 
-    Pair<Integer, String> asPair() {
+    public Pair<Integer, String> asPair() {
         return new Pair<>(number, description);
     }
 
-    static Stream<MenuOptionsEnum> stream() {
+    public static Stream<MenuOptionsEnum> stream() {
         return Stream.of(MenuOptionsEnum.values());
     }
 
